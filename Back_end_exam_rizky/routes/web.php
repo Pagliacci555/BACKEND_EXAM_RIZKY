@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'user'], function(){
+    route::get('/getUnit', 'ProductController@GetUnit');
+    route::post('/createUnit', 'ProductController@CreateUnit');
+    route::post('/deleteUnit' , 'ProductController@DeleteUnit');
+});
